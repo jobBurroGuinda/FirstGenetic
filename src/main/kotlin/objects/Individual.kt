@@ -10,8 +10,6 @@ class Individual {
 
     constructor() {
         genotype = IntArray(24)
-        phenotype = 0
-        fitness = 0
     }
 
     // creación aleatoria
