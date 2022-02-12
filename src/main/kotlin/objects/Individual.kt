@@ -13,8 +13,8 @@ class Individual {
     }
 
     // creación aleatoria
-    constructor(genotipo: IntArray) {
-        this.genotype = genotipo.clone()
+    constructor(genotype: IntArray) {
+        this.genotype = genotype.clone()
         toCalculatePhenotype()
         toCalculateFitness()
     }
