@@ -1,5 +1,6 @@
 package objects
 
+import utils.GenConstants
 import kotlin.math.pow
 
 class Individual {
@@ -9,7 +10,7 @@ class Individual {
     var fitness = 0
 
     constructor() {
-        genotype = IntArray(24)
+        genotype = IntArray(GenConstants.HUMAN)
     }
 
     // creación aleatoria
@@ -42,7 +43,7 @@ class Individual {
         return decimal
     }
 
-    private fun binaryToString(binary:IntArray):String{
+     fun binaryToString(binary:IntArray):String{
         var string = ""
         for(i in binary.indices){
             string += "${binary[i]}"
