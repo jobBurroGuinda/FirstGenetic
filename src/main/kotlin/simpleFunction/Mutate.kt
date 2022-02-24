@@ -5,7 +5,7 @@ import java.util.*
 
 object Mutate {
 
-    fun muta(i: Individual) {
+    fun mutate(i: Individual) {
         //int[] gen = i.getGenotype().clone();
         // necesitamos una posición para poder modificar
         val ran = Random()

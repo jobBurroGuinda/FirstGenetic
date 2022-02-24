@@ -3,7 +3,6 @@ package simpleFunction
 import objects.Individual
 import objects.Tool
 import utils.GenConstants
-import kotlin.properties.Delegates
 
 class SimpleGenetic(_sizePopulation: Int, _noGenerations: Int, _probMutate: Double) {
 
@@ -42,7 +41,7 @@ class SimpleGenetic(_sizePopulation: Int, _noGenerations: Int, _probMutate: Doub
                 // cruza
                 // evaluar la posibilidad de muta
                 if(Mutate.evalueMutate(probMutate)){
-                    Mutate.muta(child)
+                    Mutate.mutate(child)
                 }
                 // agregar hijo a la población auxiliar
                 pobAux.add(child)
