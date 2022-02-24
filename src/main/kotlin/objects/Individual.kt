@@ -2,15 +2,18 @@ package objects
 
 import utils.GenConstants
 import kotlin.math.pow
+import kotlin.properties.Delegates
 
 class Individual {
 
     var genotype: IntArray
-    var phenotype = 0
-    var fitness = 0
+    var phenotype by Delegates.notNull<Int>()
+    var fitness by Delegates.notNull<Int>()
 
     constructor() {
-        genotype = IntArray(GenConstants.HUMAN)
+        genotype = Tool.generateArray(GenConstants.HUMAN)
+        toCalculatePhenotype()
+        toCalculateFitness()
     }
 
     // creación aleatoria
@@ -30,16 +33,16 @@ class Individual {
 
     private fun binaryToDecimal(binary:IntArray): Int {
         var decimal = 0
-        println("Genotype: ${binaryToString(genotype)}\n")
+        //println("Genotype: ${binaryToString(genotype)}\n")
         for ((counter, i) in (binary.size-1 downTo 0).withIndex()) {
-        println("\ti=$i counter=$counter binary=${binary[i]}")
+        //println("\ti=$i counter=$counter binary=${binary[i]}")
             val multiplier = 2.0.pow(counter.toDouble())
-        println("\t\tmultiplier(${multiplier.toInt()}) = (2^counter(${counter}) = ${multiplier.toInt()})")
+        //println("\t\tmultiplier(${multiplier.toInt()}) = (2^counter(${counter}) = ${multiplier.toInt()})")
             decimal += (binary[i] * multiplier).toInt()
-        println("\t\tdecimal(${decimal}) += (binary(${binary[i]}) * multiplier(${multiplier.toInt()}) = ${binary[i]*multiplier.toInt()})")
+        //println("\t\tdecimal(${decimal}) += (binary(${binary[i]}) * multiplier(${multiplier.toInt()}) = ${binary[i]*multiplier.toInt()})")
         }
-        println("\nPhenotype = decimal = $decimal")
-        println("Fitness = 2 * phenotype = ${decimal*2}")
+        //println("\nPhenotype = decimal = $decimal")
+        //println("Fitness = 2 * phenotype = ${decimal*2}")
         return decimal
     }
 
@@ -49,6 +52,11 @@ class Individual {
             string += "${binary[i]}"
         }
         return string
+    }
+
+     fun update(){
+        toCalculatePhenotype()
+        toCalculateFitness()
     }
 
 }

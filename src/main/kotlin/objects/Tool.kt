@@ -12,4 +12,37 @@ object Tool {
         }
         return aux
     }
+
+    fun isPair(n:Int):Boolean{
+        return n % 2 == 0
+    }
+
+    fun generateRandomMask(n: Int): IntArray{
+        return generateArray(n)
+    }
+
+    fun generateOnePointMask(n: Int){
+        val aux = IntArray(n)
+        if(isPair(n)){
+            for(i in 0 until (n/2)){
+                aux[i] = 0
+            }
+            for(i in (n/2) until n){
+                aux[i] = 1
+            }
+        }
+        else {
+            for(i in 0 until ((n/2)-1)){
+                aux[i] = 0
+            }
+            for(i in ((n/2)-1) until n){
+                aux[i] = 1
+            }
+        }
+    }
+
+    fun generateTwoPointMask(n: Int){
+
+    }
+
 }

@@ -1,8 +1,10 @@
 package simpleFunction
 
 import objects.Individual
+import java.util.*
 
 object Cruza {
+
     // metodo de cruza en base a mascara, y retorna el mejor
     fun cruzaMascara(m: Individual, p: Individual, mascara: IntArray): Individual {
         val g1 = IntArray(m.genotype.size)
@@ -22,4 +24,8 @@ object Cruza {
         val h2 = Individual(g2)
         return if (h1.fitness > h2.fitness) h1 else h2
     }
+
+
+
+
 }
