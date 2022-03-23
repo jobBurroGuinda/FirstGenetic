@@ -17,7 +17,6 @@ object Mutate {
             i.genotype[pos] = 0
         }
         // actualizar el fenotipo y fitness
-        //i = new Individual(i.getGenotype());
         i.update()
     }
 

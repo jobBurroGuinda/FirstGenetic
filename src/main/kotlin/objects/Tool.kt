@@ -13,6 +13,16 @@ object Tool {
         return aux
     }
 
+    fun checkGenotypeDecimal(array: IntArray):Boolean{
+        var validate = false
+        var j = array.size-1
+        for(i in array.indices){
+            //if(array[i])
+        }
+
+        return validate
+    }
+
     fun isPair(n:Int):Boolean{
         return n % 2 == 0
     }
