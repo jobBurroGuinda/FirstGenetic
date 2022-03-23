@@ -1,6 +1,6 @@
 import objects.tcp.City
 import objects.tcp.Route
-import simpleFunction.TCP
+import simpleFunction.TSP
 
 
 fun main() {
@@ -25,7 +25,7 @@ fun main() {
 
 
     // Initial GA
-    val ga = TCP(100, 0.001, 0.9, 2, 5)
+    val ga = TSP(100, 0.001, 0.9, 2, 5)
 
 
     // Initialize population

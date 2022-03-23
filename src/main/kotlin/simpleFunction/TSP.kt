@@ -7,7 +7,7 @@ import objects.tcp.Route
 import java.util.*
 
 
-open class TCP(
+open class TSP(
     private val populationSize: Int,
     private val mutationRate: Double,
     private val crossoverRate: Double,
